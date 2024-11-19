@@ -52,6 +52,8 @@ DOM과 CSSOM을 결합하여 렌더 트리를 생성합니다.
 
 ## 인터넷 창에서 www.google.com을 입력하면 무슨 일이 일어나는지 설명해주세요.
 
+https://www.maeil-mail.kr/question/20
+
 첫 번째로, DNS 조회가 일어납니다.
 
 브라우저는 해당 도메인 이름을 IP주소로 변환합니다. 이 과정을 DNS 조회라고 합니다. 캐시된 DNS 기록을 확인 후, 없으면 DNS 서버에 요청하여 google에 해당하는 IP 주소를 얻습니다.
@@ -69,6 +71,8 @@ DOM과 CSSOM을 결합하여 렌더 트리를 생성합니다.
 # 11/18
 
 ## React의 render phase와 commit phase에 대해서 설명해주세요.
+
+https://www.maeil-mail.kr/question/30
 
 리액트의 렌더링 과정은 크게 `render phase`와 `commit phase`로 나눌 수 있습니다.
 
@@ -105,3 +109,40 @@ DOM과 CSSOM을 결합하여 렌더 트리를 생성합니다.
 시간 분할이란, 큰 렌더링 작업을 여러 개의 작은 작업으로 나누어 처리하는 것으로, 브라우저가 중간에 사용자 입력 처리가 가능하므로 UI가 더 부드럽게 유지, 사용자 경험을 향상시킬 수 있다.
 
 Suspense와의 통합은, 데이터 패칭이나 비동기 작업의 로딩 상태를 관리하는데 도움을 준다.
+
+---
+
+# 11/19
+
+## 자바스크립트 호이스팅에 대해서 설명해주세요.
+
+https://www.maeil-mail.kr/question/31
+
+`호이스팅 Hoisting`은 자바스크립트가 코드를 실행하기 전에 변수, 함수 선언을 코드의 최상단으로 끌어올리는 것처럼 동작하는 특징입니다. 이를 통해 코드의 선언된 위치와 관계 없이 변수를 사용하는 것처럼 보입니다.
+
+선언의 호이스팅이지, 실제로 변수 값 할당까지 끌어올리지는 않습니다.
+
+```
+console.log(myVar);
+var myVar = 10;
+console.log(myVar);
+```
+
+위의 코드에서, 맨 처음 console.log는 undefined가 나옵니다. myVar의 선언은 호이스팅 되었지만, 값이 할당되지는 않습니다. 밑의 console.log에서는 정상적으로 10이 출력됩니다.
+
+함수 선언의 경우, 전체가 호이스팅되므로 함수 호출을 이전에 해도 문제가 되지 않습니다.
+
+`let`, `const`의 경우는 호이스팅이 되지만, 선언하기 전에 접근하려고 하면 `ReferenceError`가 발생합니다. TDZ가 존재하여, 해당 구간에서는 변수에 접근할 수 없기 떄문입니다.
+
+TDZ란, `Temporal Dead Zone`으로, 변수가 선언되었지만 초기화되기 전까지의 구간을 뜻합니다.
+
+```
+console.log(myLet);
+
+let myLet = 10;
+```
+
+이 경우, 위의 console.log에서는 `ReferenceError`가 발생합니다.
+변수 선언은 호이스팅되었지만 초기화는 변수 선언이 실제로 실행될 떄에 일어나기 때문입니다.
+
+결론적으로, var는 선언만 호이스팅되고(초기화 전에 undefined), let과 const의 경우 TDZ의 존재로 인해 초기화 전에 접근하면 ReferenceError가 발생합니다.
