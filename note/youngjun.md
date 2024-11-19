@@ -52,6 +52,8 @@ DOM과 CSSOM을 결합하여 렌더 트리를 생성합니다.
 
 ## 인터넷 창에서 www.google.com을 입력하면 무슨 일이 일어나는지 설명해주세요.
 
+https://www.maeil-mail.kr/question/20
+
 첫 번째로, DNS 조회가 일어납니다.
 
 브라우저는 해당 도메인 이름을 IP주소로 변환합니다. 이 과정을 DNS 조회라고 합니다. 캐시된 DNS 기록을 확인 후, 없으면 DNS 서버에 요청하여 google에 해당하는 IP 주소를 얻습니다.
@@ -69,6 +71,8 @@ DOM과 CSSOM을 결합하여 렌더 트리를 생성합니다.
 # 11/18
 
 ## React의 render phase와 commit phase에 대해서 설명해주세요.
+
+https://www.maeil-mail.kr/question/30
 
 리액트의 렌더링 과정은 크게 `render phase`와 `commit phase`로 나눌 수 있습니다.
 
@@ -111,6 +115,8 @@ Suspense와의 통합은, 데이터 패칭이나 비동기 작업의 로딩 상�
 # 11/19
 
 ## 자바스크립트 호이스팅에 대해서 설명해주세요.
+
+https://www.maeil-mail.kr/question/31
 
 `호이스팅 Hoisting`은 자바스크립트가 코드를 실행하기 전에 변수, 함수 선언을 코드의 최상단으로 끌어올리는 것처럼 동작하는 특징입니다. 이를 통해 코드의 선언된 위치와 관계 없이 변수를 사용하는 것처럼 보입니다.
 
