@@ -146,3 +146,122 @@ let myLet = 10;
 변수 선언은 호이스팅되었지만 초기화는 변수 선언이 실제로 실행될 떄에 일어나기 때문입니다.
 
 결론적으로, var는 선언만 호이스팅되고(초기화 전에 undefined), let과 const의 경우 TDZ의 존재로 인해 초기화 전에 접근하면 ReferenceError가 발생합니다.
+
+---
+
+# 11/20
+
+## 쿠키와 세션, 웹 스토리지의 차이를 설명해주세요.
+
+쿠키와 웹 스토리지는 클라이언트에 저장되고, 세션은 서버에 저장됩니다.
+
+데이터 수명에 따른 차이점 또한 존재합니다. 쿠키는 만료 기간을 설정할 수 있습니다. 세션의 경우 브라우저를 종료 시 만료기간에 상관 없이 종료됩니다.
+웹 스토리지는 로컬 스토리지와 세션 스토리지가 있습니다. 로컬 스토리지는 사용자가 데이터를 지우지 않는 이상, 브라우저나 OS를 조욜해도 계속 브라우저에 남아있습니다. 동일한 브라우저를 사용할 때만 해당됩니다. 세션 스토리지의 경우 오리진 뿐만 아닌 브라우저 탭에도 데이터가 종속되어 있기 때문에 윈도우, 브라우저 탭을 닫을 경우 제거된다.
+
+데이터 용량에 따른 차이점도 존재합니다. 쿠키는 약 4KB, 웹 스토리지는 약 5~10MB, 세션은 서버 용량에 따라 다릅니다.
+
+보안적인 측면의 차이점은 다음과 같습니다. 쿠키와 웹 스토리지는 클라이언트 측 저장으로 보안에 취약합니다. 세션의 경우 서버 측 저장으로 비교적 안전하지만, 세션 관리에 주의가 필요합니다.
+
+---
+
+# 11/21
+
+## 자바스크립트 함수에 대해 설명햊쉐요.
+
+자바스크립트 함수는 일급 객체로 취급됩니다.
+
+이를 통해 자바스크립트는 매우 유연하고, 고차 함수를 포함한 다양한 패턴을 구현할 수 있습니다.
+
+자바스크립트 함수의 주요 특징은 다음과 같습니다.
+
+### 일급 객체
+
+자바스크립트에서 함수는 값으로 취급될 수 있습니다. 변수에 할당되거나, 다른 함수의 인자로 전달하거나, 함수의 변환값으로 사용할 수 있습니다.
+
+```
+const sayHello = function() { return 'Hello'; };
+console.log(sayHello()); // 'Hello'
+
+const executeFunction = function(fn) {
+  return fn();
+};
+console.log(executeFunction(sayHello)); // 'Hello'
+```
+
+### 익명 함수, 함수 표현식
+
+자바스크립트에서 이름 없는 함수를 정의할 수 있습니다. 익명 함수는 표현식에서 주로 사용됩니다.
+
+```
+const add = function(a, b) {
+  return a + b;
+};
+console.log(add(2, 3)); // 5
+```
+
+### 호이스팅
+
+함수 선언은 코드가 실행되기 전 호이스팅됩니다. 함수 선언 이전에 호출이 가능합니다.
+
+함수 표현식의 경우 변수에 할당된 후에 사용이 가능합니다.
+
+```
+console.log(declaredFunction()); // 'Declared Function'
+function declaredFunction() {
+  return 'Declared Function';
+}
+
+// 함수 표현식은 할당 후에만 사용할 수 있음
+const expressedFunction = function() {
+  return 'Expressed Function';
+};
+console.log(expressedFunction()); // 'Expressed Function'
+```
+
+### 클로저
+
+클로저는 함수가 자신이 선언된 환경을 기억하고, 그 외부 스코프에 접근할 수 있는 기능입니다. 이를 통해 함수는 자신이 선언된 스코프 내의 변수를 참조하고 유지할 수 있습니다.
+
+```
+function outer() {
+  const outerVar = 'I am outer!';
+
+  return function inner() {
+    return outerVar; // 외부 변수에 접근 가능
+  };
+}
+const innerFunction = outer();
+console.log(innerFunction()); // 'I am outer!'
+```
+
+### 고차 함수
+
+함수가 일급 객체이므로, 고차 함수를 정의할 수 있습니다.
+
+고차 함수란, 다른 함수를 인자로 받거나 반환하는 함수입니다.
+
+```
+function multiplyBy(factor) {
+  return function(num) {
+    return num * factor;
+  };
+}
+const double = multiplyBy(2);
+console.log(double(5)); // 10
+```
+
+### 화살표 함수
+
+더 간결한 문법을 제공하고, this 바인딩에서 기존 함수와 다른 동작을 합니다. 화살표 함수는 선언된 위치의 this 값을 유지하므로 일반 함수와 달리 별도로 this 바인딩을 할 필요가 없습니다.
+
+```
+const obj = {
+  value: 42,
+  method: function() {
+    setTimeout(() => {
+      console.log(this.value); // 42 (Arrow 함수는 obj의 this를 유지)
+    }, 1000);
+  }
+};
+obj.method();
+```
