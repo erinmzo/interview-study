@@ -1,3 +1,17 @@
+## CommonJS와 ES Module의 차이점에 대해서 설명해주세요.
+
+https://www.maeil-mail.kr/question/38
+
+commonJS와 ES Module은 자바스크립트에서 모듈을 불러오고 내보내는 두 가지 방식입니다.
+CommonJS는 자바스크립트 초창기부터 쓰던 방식인데, 동기적으로 로드하고 트리 쉐이킹이 지원되지 않습니다. require로 모듈을 동적으로 불러올 수 있기 때문입니다.
+ES Module은 ES6때 나온 새로운 모듈 시스템입니다. Promise를 기반으로 비동기적으로 작동되며, 정적 분석이 가능해 트리 쉐이킹을 할 수 있습니다.
+ES Module 방식을 쓰려면 package.json에서 `"type": "module"` 을 명시해야 합니다. 최근에는 대부분 ES Module 방식을 쓰지만, 레거시 문제로 CommonJS도 여전히 사용됩니다.
+
+#### 추가질문: 트리 쉐이킹이란?
+
+자바스크립트 번들러(Webpack, Rollup 등)가 사용하지 않는 코드를 자동으로 제거해서 최종 번들 크기를 줄이는 최적화 기법.
+트리 쉐이킹이 작동하려면 코드가 정적 구조로 작성되어 어떤 모듈이 어디서 사용될지 컴파일 시점에 알 수 있어야 한다. CommonJS는 require로 모듈을 동적으로 불러올 수 있어서 정적 분석이 어렵다.
+
 ## 자바스크립트 함수에 대해서 설명해주세요.
 
 https://www.maeil-mail.kr/question/33
