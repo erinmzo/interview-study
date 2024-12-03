@@ -1,3 +1,10 @@
+## useEffect와 useLayoutEffect의 차이점에 대해서 설명해주세요.
+
+https://www.maeil-mail.kr/question/46
+
+useEffect는 화면이 실제로 사용자에게 그려진 후에 실행됩니다. 그래서 useEffect는 보통 데이터를 가져오는 작업이나 이벤트 리스너 추가 등 화면에 직접적인 영향을 주지 않는 작업에 주로 사용됩니다.
+반면 useLayoutEffect는 화면에 내용이 그려지기 전에 모든 작업이 완료됩니다. 그래서 DOM의 크기를 측정해서 다른 요소의 위치를 조정해야 할 때 useLayoutEffect를 사용하면 즉각적으로 변경사항이 반영되어 화면 깜빡임이나 불필요한 재렌더링을 방지할 수 있습니다. 주의할 점은 useLayoutEffect는 동기적으로 실행되기 때문에 렌더링을 느려지게 할 수 있습니다.
+
 ## async/await에 대해 설명해보세요.
 
 async랑 await은 자바스크립트에서 Promise를 좀 더 쉽게 쓸 수 있도록 해주는 키워드인데요.
