@@ -1,3 +1,11 @@
+## CSS Flexbox와 Grid의 차이점에 대해서 설명해주세요.
+
+https://www.maeil-mail.kr/question/51
+
+둘 다 레이아웃을 짤 때 쓰는 건데, flex는 1차원 레이아웃이고 grid는 2차원 레이아웃입니다. flex는 row나 column 중 한 방향으로 정렬하는 거고, grid는 row와 column을 모두 사용합니다.
+그래서 grid는 복잡한 레이아웃을 구성하거나, 웹페이지 전체 구조를 잡을 때 쓰면 좋습니다. 카드 레이아웃이나 갤러리 형식처럼요. grid-template-row나 col 같은 속성으로 row와 column의 크기를 미리 정해놓고 그 셀 안에 요소를 배치하는 방식입니다.
+반면 flex는 주로 요소가 컨테이너 크기나 위치에 맞춰서 자동으로 정렬되기 때문에 유연하게 요소가 추가되거나 삭제될 때 사용하기 좋습니다. 가로나 세로 한 방향으로 요소들을 한 줄로 정렬하고 간격을 조절하기에 좋습니다.
+
 ## SSR(Server Side Rendering)에 대해 설명해주세요.
 
 https://www.maeil-mail.kr/question/48
