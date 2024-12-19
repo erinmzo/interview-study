@@ -1,3 +1,10 @@
+## 자바스크립트 Promise에 대해서 아는 대로 설명해주세요.
+
+https://www.maeil-mail.kr/question/65
+
+비동기 작업할 때 쓰는 객체입니다. 기본적으로 세 가지 상태를 가지는데 pending, fulfilled, rejected 입니다. 비동기 작업이 성공하면 resolve를 호출해서 결과를 반환하고 상태를 fulfilled로 변경합니다. 실패하면 reject를 호출해서 에러를 반환하고 rejected 상태로 변경합니다.
+작업이 다 끝나서 성공하면 then, 에러가 발생하면 catch를 사용해서 비동기 작업 이후의 결과를 처리할 수 있습니다.
+
 ## useEffect가 호출되는 시점에 대해 설명해 주세요.
 
 https://www.maeil-mail.kr/question/64
