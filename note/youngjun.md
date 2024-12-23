@@ -533,3 +533,15 @@ E2E 테스트는 애플리케이션을 사용자 관점에서 처음부터 끝�
 CDN(Content Delivery Network) 방법 또한 존재합니다.
 
 CDN을 적용하면 사용자가 지리적으로 가까운 서버에서 이미지를 다운로드하게 되어 로딩 속도를 단축시킬 수 있습니다.
+
+### WebP나 AVIF는 모든 브라우저에서 지원하지 않는다고 하셨는데, 호환성 문제를 어떻게 해결할 수 있을까요?
+
+HTML의 <picture> 요소를 통해 fallback 이미지를 적용할 수 있습니다.
+
+```typescript
+<picture>
+  <source srcset="image.avif" type="image/avif">
+  <source srcset="image.webp" type="image/webp">
+  <img src="image.jpg" alt="Image description">
+</picture>
+```
