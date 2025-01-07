@@ -28,7 +28,7 @@
 28. [자바스크립트 Promise에 대해서 아는 대로 설명해주세요](#자바스크립트-Promise에-대해서-아는-대로-설명해주세요)
 29. [JWT에 대해 설명해주세요](#JWT에-대해-설명해주세요)
 30. [웹 보안과 관련된 주요 취약점과 대응 방안에 대해 설명해주세요](#웹-보안과-관련된-주요-취약점과-대응-방안에-대해-설명해주세요)
-31. [CORS(Cross Origin Resource Sharing)에 대해 설명해주세요](#CORS(Cross-Origin-Resource-Sharing)에-대해-설명해주세요)
+31. [CORS Cross Origin Resource Sharing에 대해 설명해주세요](#CORS-Cross-Origin-Resource-Sharing에-대해-설명해주세요)
 32. [리액트에서 컴포넌트란 무엇인가요?](#리액트에서-컴포넌트란-무엇인가요?)
 
 
@@ -309,7 +309,7 @@ CSRF(Cross-Site Request Forgery) 공격을 방지하기 위해서는 토큰 기�
 또한 중요한 API 요청에는 Same-Origin 정책을 적용하고, 필요한 경우에만 CORS를 허용해야 합니다. 
 클라이언트 측 저장소(localStorage, sessionStorage)는 XSS 공격에 취약하므로 민감한 정보를 저장하지 않아야 하며, 쿠키를 사용할 때는 HttpOnly, Secure, SameSite 옵션을 적절히 설정해야 합니다. 또한 모든 API 통신은 HTTPS를 통해 이루어져야 하며, 적절한 인증과 권한 검증이 필요합니다.
 
-### CORS(Cross Origin Resource Sharing)에 대해 설명해주세요
+### CORS Cross Origin Resource Sharing에 대해 설명해주세요
 CORS는 다른 출처의 리소스를 공유하는 것을 제어하는 보안 메커니즘입니다. 여기서 '다른 출처'란 프로토콜, 도메인, 포트 중 하나라도 다른 경우를 말하는데요. 예를 들어, 프론트엔드는 localhost:3000에서 실행되고 백엔드 API는 localhost:8080에서 실행될 때, 이 둘은 서로 다른 출처가 됩니다. 이때 브라우저는 보안상의 이유로 이러한 요청을 차단합니다
 
 ### CORS가 왜 필요한가요?
