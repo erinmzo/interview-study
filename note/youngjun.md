@@ -784,3 +784,21 @@ TDD(Test-Driven Development)는 소프트웨어 개발 방법론 중 하나로, 
 2. 리팩토링이 용이해집니다. 코드가 올바르게 동작하는지 확인해 줍니다.
 
 3. 좋은 설계가 유도됩니다. 테스트를 통해 요구사항을 명확하게 이해하며, 이를 바탕으로 정교한 설게가 가능합니다.
+
+---
+
+## Node와 Element의 차이에 대해 설명해주세요.
+
+Node는 DOM을 구성하는 가장 기본적인 구성 단위입니다.
+
+"Document Node"는 HTML 문서 전체를 나타내는 루트 노드이며, "Element Node"는 HTML 태그를 나타내고, "Text Node"는 텍스트 내용을, "Comment Node"는 주석을 나타냅니다.
+
+Node는 DOM 트리의 모든 구성 요소를 포함하는 포괄적인 개념입니다.
+
+Element는 Node의 특정 타입 중 하나로, HTML이나 XML 태그로 표현되는 객체를 의미합니다.
+
+모든 Element는 Node이지만, 모든 Node가 Element인 것은 아닙니다.
+
+Element는 id, class, style과 같은 HTML 속성을 가질 수 있으며, querySelector()나 getElementsByClassName()과 같은 메서드를 사용할 수 있다는 특징이 있습니다.
+
+<div>Hello<!--주석-->World</div>라는 HTML이 있다면, div 태그는 Element Node이면서 동시에 Node입니다. 반면 'Hello'와 'World'라는 텍스트는 Text Node이며, 주석은 Comment Node입니다. 이들은 모두 Node이지만 Element는 아닙니다.
