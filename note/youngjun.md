@@ -1056,3 +1056,34 @@ axios나 fetch 사용 시 credentials 옵션을 적절히 설정합니다.
 탐색 과정을 계속 반복하면서 결국 원하는 프로퍼티를 찾거나, 프로토타입이 null이 되는 단계에 도달할 때까지 프로토타입 체인을 타고 올라가는 방식으로 탐색합니다.
 
 프로토타입이 꼬리에 꼬리를 물고 연결된 형태를 두고 프로토타입 체인이라고 부르는 것입니다.
+
+### 예시
+
+```
+// 1) Object.create()를 이용한 방식
+const dog = {
+  greet() {
+    console.log('Hello from dog!');
+  }
+};
+
+const maru = Object.create(dog); // maru의 프로토타입이 dog로 설정됨
+maru.greet(); // "Hello from dog!" 출력
+```
+
+```
+// 2) prototype 프로퍼티를 이용한 방식
+function Dog() {}
+Dog.prototype.greet = function () {
+  console.log('Hello from Dog!');
+};
+
+const maru = new Dog(); // maru의 프로토타입이 dog로 설정됨
+maru.greet(); // "Hello from Dog!" 출력
+```
+
+객체 maru가 dog를 프로토타입으로 갖는다고 가정해봅시다.
+
+만약 maru.greet()을 호출했을 시 maru에 greet()이 없으면 프로토타입인 dog에 greet()이 존재하는지 탐색합니다.
+이때 dog에 greet()이 존재하면 탐색을 멈추고 해당 메서드를 호출합니다.
+만약 dog에도 존재하지 않는다면 프로토타입 체인의 끝에 도달할 때까지 상위 프로토타입을 계속 탐색해 나갑니다.
